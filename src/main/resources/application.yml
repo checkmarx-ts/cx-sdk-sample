@@ -1,7 +1,11 @@
 checkmarx:
-  username: xxxx
-  password: xxxx
-  client-secret: 014DF517-39D1-4453-B7B3-9930C563627C
+  version: 9.0
+  username: XXXXXX
+  password: XXXXXX
+  client-id: XXXXXX
+  client-secret: XXXXXX
+  scope: sast_api access_control_api management_and_orchestration_api
+  team: /CxServer/Checkmarx
   base-url: https://cx.local
   url: ${checkmarx.base-url}/cxrestapi
   portal-url: ${checkmarx.base-url}/cxwebinterface/Portal/CxWebService.asmx
