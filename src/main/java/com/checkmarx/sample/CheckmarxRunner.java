@@ -30,8 +30,11 @@ public class CheckmarxRunner implements CommandLineRunner {
             teams.forEach(t -> log.info(t.getFullName()));
             //get the base team from the property file
             String teamId = client.getTeamId(properties.getTeam());
-            //create a new team under this above team
-            String newTeamId = client.createTeam(teamId, "MyNewTeam");
+            String newTeamId = client.getTeamId(properties.getTeam().concat(properties.getTeamPathSeparator()).concat("MyNewTeam"));
+            //create a new team under this above team if it doen't exist
+            if(newTeamId .equals("-1")){
+                newTeamId = client.createTeam(teamId, "MyNewTeam");
+            }
             //log the new team id
             log.info("New team id: {}", newTeamId);
             //list out teams again
