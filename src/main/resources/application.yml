@@ -1,11 +1,13 @@
 checkmarx:
-  version: 9.0
-  username: XXXXXX
-  password: XXXXXX
-  client-id: XXXXXX
-  client-secret: XXXXXX
-  scope: sast_api access_control_api management_and_orchestration_api
-  team: /CxServer/Checkmarx
-  base-url: https://cx.local
+  #version: 9.0 Default is 8.9
+  username: XXXXXXXXX
+  password: XXXXXXXXX
+  #client-id: XXXXXX Default is the built in plugin client secret
+  client-secret: 014DF517-39D1-4453-B7B3-9930C563627C #Default is the built in plugin Not-so-secret client secret
+  #scope: access_control_api sast_rest_api - Required for 9.0
+  #team: /CxServer/Checkmarx 9.0 format
+  team: \CxServer\SP\Checkmarx # 8.9 format
+  base-url: https://checkmarx.mycompany.com
   url: ${checkmarx.base-url}/cxrestapi
   portal-url: ${checkmarx.base-url}/cxwebinterface/Portal/CxWebService.asmx
+  
